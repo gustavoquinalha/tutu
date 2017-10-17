@@ -1,6 +1,5 @@
 <template>
 <div id="app">
-  <!-- <headerMenu></headerMenu> -->
   <transition name="fade">
     <router-view></router-view>
   </transition>
@@ -10,13 +9,11 @@
 </template>
 
 <script>
-import headerMenu from './components/menu'
 import rodape from './components/rodape'
 
 export default {
   name: 'app',
   components: {
-    headerMenu,
     rodape
   }
 }

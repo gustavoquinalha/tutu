@@ -6,7 +6,8 @@
       <div class="menu size margin container justify-content-between align-items-center">
         <router-link :to="{ name: 'Home' }">
           <div class="logo-menu container align-items-center">
-            <img src="../assets/images/logo-01.svg" width="40" alt="">
+            <!-- <img src="../assets/images/logo-01.svg" width="40" alt=""> -->
+            LOGO
           </div>
         </router-link>
         <div class="link-menu">
