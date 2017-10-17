@@ -17,7 +17,7 @@
 	   </div>
 
      <div class="flex-grow-1 container wrap align-items-center justify-content-center">
-       <input v-model="newSizeNumber" v-on:keyup.enter="addNewSize" placeholder="Adicionar novo tamanho Ex: 400" class="input">
+       <input v-model="newSizeNumber" v-on:keyup.enter="addNewSize" placeholder="Ex: 10cm / Digitar apenas os números" class="input">
        <button type="button" name="button" class="btn" @click="addNewSize">
          Adicionar tamanho
        </button>
@@ -32,10 +32,10 @@
     </div>
 
       <div class="container wrap justify-content-start align-items-start" id="tela">
-      	<div class="container column" v-for="x in sizes">
+      	<div class="container column" v-for="(index, x) in sizes" :key="index.id">
           <div class="img-tattoo">
-            <button class="btn btn-small danger btn-remove" v-on:click="removeSize(index)">x</button>
-        	  <img :src="imgDataUrl" :width="x.width" height="auto">
+            <button class="btn btn-small danger btn-remove" v-on:click="removeSize(x)">x</button>
+        	  <img :src="imgDataUrl" height="auto" :style="{ width: index.width + 'cm'}">
           </div>
       	</div>
       </div>
@@ -45,7 +45,6 @@
 <script>
 import 'babel-polyfill'
 import myUpload from 'vue-image-crop-upload'
-import * as jsPDF from 'jspdf'
 
 export default {
   components: {
@@ -54,26 +53,26 @@ export default {
   data() {
     return {
       show: false,
-      imgDataUrl: 'https://i.pinimg.com/564x/df/26/89/df268938fc471e3143d5acbf13396075.jpg',
+      imgDataUrl: 'https://instagram.fbfh3-1.fna.fbcdn.net/t51.2885-15/e35/21294520_275844862907983_67354703633055744_n.jpg',
       sizes: [{
           id: 1,
-          width: 300
+          width: 10
         },
         {
           id: 2,
-          width: 250
+          width: 8
         },
         {
           id: 3,
-          width: 200
+          width: 5
         },
         {
           id: 4,
-          width: 150
+          width: 4
         },
         {
           id: 5,
-          width: 100
+          width: 2
         },
       ],
       nextSizeId: 6,
@@ -111,8 +110,9 @@ export default {
       this.newSizeNumber = ''
     },
 
-    removeSize: function(index) {
-      this.sizes.splice(index, 1)
+    removeSize: function(x) {
+      console.log(x)
+      this.sizes.splice(x, 1)
     },
 
     toggleShow() {
