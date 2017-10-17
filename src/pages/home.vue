@@ -46,6 +46,7 @@
           </div>
       	</div>
       </div>
+      <!-- <img src="../assets/images/intro.png" width="300" alt=""> -->
 
 
   </div>
