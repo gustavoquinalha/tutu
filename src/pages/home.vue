@@ -83,26 +83,16 @@ export default {
   methods: {
 
     pdf: function() {
-            var conteudo = document.getElementById('tela').innerHTML,
-                tela_impressao = window.open('about:blank')
+      const tela = document.getElementById('tela').innerHTML
+      const tela_impressao = window.open('about:blank')
 
-            tela_impressao.document.write(conteudo);
-            tela_impressao.document.body.style.display='flex'
-            tela_impressao.document.body.style.flexWrap='wrap'
-            tela_impressao.window.print();
-            tela_impressao.window.close();
+      tela_impressao.document.write(tela)
+      tela_impressao.document.body.style.display = 'flex'
+      tela_impressao.document.body.style.flexWrap = 'wrap'
+      tela_impressao.window.print()
+      tela_impressao.window.close()
 
     },
-    //
-    // pdf: function() {
-    //   console.log("teste")
-    //   var doc = new jsPDF()
-    //
-    //   doc.text('Hello world!', 10, 10)
-    //   doc.save('a4.pdf')
-    //
-    // },
-
     addNewSize: function() {
       this.sizes.push({
         id: this.nextSizeId++,
@@ -120,17 +110,14 @@ export default {
       this.show = !this.show
     },
     cropSuccess(imgDataUrl, field) {
-      console.log('-------- crop success --------')
       this.imgDataUrl = imgDataUrl
     },
     cropUploadSuccess(jsonData, field) {
-      console.log('-------- upload success --------')
-      console.log(jsonData)
+      // console.log(jsonData)
       console.log('field: ' + field)
     },
     cropUploadFail(status, field) {
-      console.log('-------- upload fail --------')
-      console.log(status)
+      // console.log(status)
       console.log('field: ' + field)
     }
   }
@@ -140,19 +127,19 @@ export default {
 
 <style lang="scss" scoped>
 small {
-  margin-left: 5px;
-  font-weight: 900
+    margin-left: 5px;
+    font-weight: 900;
 }
 .btn.btn-print {
-  &:hover {
-    background: #37ca5c
-  }
+    &:hover {
+        background: #37ca5c;
+    }
 }
 .btn {
-  &:hover {
-    background: #333;
-    color: #fff;
-  }
+    &:hover {
+        background: #333;
+        color: #fff;
+    }
 }
 .img-tattoo {
     border: 1px solid #333;
