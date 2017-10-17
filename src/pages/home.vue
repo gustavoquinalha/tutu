@@ -24,31 +24,21 @@
      </div>
 
      <div class="">
-       <button type="flex-basis-100 button" name="button" class="btn primary btn-print">
+       <button type="flex-basis-100 button" name="button" class="btn primary btn-print" @click="pdf">
          Imprimir
        </button>
      </div>
+
     </div>
 
-      <!-- <div class="container justify-content-center align-items-center">
-        <input v-model="newSizeNumber" v-on:keyup.enter="addNewSize" placeholder="Adicionar novo tamanho Ex: 400" class="input">
-        <button type="button" name="button" class="btn btn-print" @click="addNewSize">
-          Adicionar
-        </button>
-      </div> -->
-
-
-      <div class="container wrap justify-content-start align-items-start">
+      <div class="container wrap justify-content-start align-items-start" id="tela">
       	<div class="container column" v-for="x in sizes">
           <div class="img-tattoo">
             <button class="btn btn-small danger btn-remove" v-on:click="removeSize(index)">x</button>
-        	  <img :src="imgDataUrl" :width="x.width" height="auto">
+        	  <img :src="imgDataUrl" :width="x.width + 'cm'" height="auto">
           </div>
       	</div>
       </div>
-      <!-- <img src="../assets/images/intro.png" width="300" alt=""> -->
-
-
   </div>
 </template>
 
@@ -67,43 +57,51 @@ export default {
       imgDataUrl: 'https://i.pinimg.com/564x/df/26/89/df268938fc471e3143d5acbf13396075.jpg',
       sizes: [{
           id: 1,
-          width: 350
-        },
-        {
-          id: 2,
           width: 300
         },
         {
-          id: 3,
+          id: 2,
           width: 250
         },
         {
-          id: 4,
+          id: 3,
           width: 200
         },
         {
-          id: 5,
-          width: 250
+          id: 4,
+          width: 150
         },
         {
-          id: 6,
+          id: 5,
           width: 100
         },
       ],
-      nextSizeId: 7,
+      nextSizeId: 6,
       newSizeNumber: ''
     }
   },
   methods: {
 
     pdf: function() {
-      var doc = new jsPDF()
-      doc.setFontSize(10)
-      doc.setFontType("bold");
-      doc.text(20, 40, "FICHA DE AVALIAÇÃO CORPORAL ")
-      doc.setFontType("normal");
-      doc.text(20, 45, "Paciente: ")
+            var conteudo = document.getElementById('tela').innerHTML,
+                tela_impressao = window.open('about:blank')
+
+            tela_impressao.document.write(conteudo);
+            tela_impressao.document.body.style.display='flex'
+            tela_impressao.document.body.style.flexWrap='wrap'
+            tela_impressao.window.print();
+            tela_impressao.window.close();
+
     },
+    //
+    // pdf: function() {
+    //   console.log("teste")
+    //   var doc = new jsPDF()
+    //
+    //   doc.text('Hello world!', 10, 10)
+    //   doc.save('a4.pdf')
+    //
+    // },
 
     addNewSize: function() {
       this.sizes.push({
@@ -114,7 +112,6 @@ export default {
     },
 
     removeSize: function(index) {
-      console.log(index)
       this.sizes.splice(index, 1)
     },
 
