@@ -46,12 +46,12 @@
       "type": "image/png"
     }
   ],
-  "name": "Vue default",
+  "name": "tutumetatua",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./?utm_source=web_app_manifest",
   "publicPath": null,
-  "short_name": "Vue default",
-  "description": "Vue default",
+  "short_name": "tutumetatua",
+  "description": "tutumetatua",
   "background_color": "#dddddd"
 }

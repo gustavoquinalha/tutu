@@ -31,10 +31,10 @@ var webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new WebpackPwaManifest({
       filename: "manifest.json",
-      name: 'Vue default',
+      name: 'tutumetatua',
       start_url: "./?utm_source=web_app_manifest",
-      short_name: 'Vue default',
-      description: 'Vue default',
+      short_name: 'tutumetatua',
+      description: 'tutumetatua',
       orientation: "portrait",
       display: "standalone",
       background_color: '#dddddd',
