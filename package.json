@@ -10,7 +10,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
@@ -80,6 +81,7 @@
     "sinon-chai": "^2.8.0",
     "the-grid-flexbox": "^1.0.1",
     "url-loader": "^0.5.8",
+    "vue-gh-pages": "^1.5.0",
     "vue-image-crop-upload": "^2.0.7",
     "vue-loader": "^13.0.4",
     "vue-style-loader": "^3.0.1",
