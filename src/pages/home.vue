@@ -37,6 +37,7 @@
             <button class="btn btn-small danger btn-remove" v-on:click="removeSize(x)">x</button>
         	  <img :src="imgDataUrl" height="auto" :style="{ width: index.width + 'cm'}">
           </div>
+          <small class="">{{index.width}} cm</small>
       	</div>
       </div>
   </div>
@@ -56,7 +57,7 @@ export default {
       imgDataUrl: 'https://instagram.fbfh3-1.fna.fbcdn.net/t51.2885-15/e35/21294520_275844862907983_67354703633055744_n.jpg',
       sizes: [{
           id: 1,
-          width: 10
+          width: 9
         },
         {
           id: 2,
@@ -138,6 +139,10 @@ export default {
 
 
 <style lang="scss" scoped>
+small {
+  margin-left: 5px;
+  font-weight: 900
+}
 .btn.btn-print {
   &:hover {
     background: #37ca5c
