@@ -35,7 +35,7 @@
       	<div class="container column" v-for="x in sizes">
           <div class="img-tattoo">
             <button class="btn btn-small danger btn-remove" v-on:click="removeSize(index)">x</button>
-        	  <img :src="imgDataUrl" :width="x.width + 'cm'" height="auto">
+        	  <img :src="imgDataUrl" :width="x.width" height="auto">
           </div>
       	</div>
       </div>
