@@ -1,0 +1,21 @@
+.fade-enter-active {
+   transition: all .3s cubic-bezier(.37, .61, .58, .86);
+ }
+ .fade-leave-active {
+   transition: all .3s cubic-bezier(.37, .61, .58, .86);
+ }
+ .fade-enter,
+ .fade-leave-to {
+   transform: translateX(-100vh);
+ }
+
+@import 'base/base.scss';
+@import 'base/text.scss';
+@import 'base/colors.scss';
+@import 'base/shadow.scss';
+@import 'base/space.scss';
+@import 'base/buttons.scss';
+
+[v-cloak] {
+  display: none;
+}

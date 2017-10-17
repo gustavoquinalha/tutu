@@ -1,0 +1,22 @@
+<svg id="svg2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273.17 273.17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ddd;
+      }
+
+      .cls-2 {
+        fill: #ccc;
+      }
+    </style>
+  </defs>
+  <title>logo</title>
+  <g id="g10">
+    <g id="g12">
+      <path id="path14" class="cls-1" d="M166.81,23.24,136.58,75.59,106.36,23.24H5.7L136.58,249.93,267.46,23.24Z"/>
+    </g>
+    <g id="g16">
+      <path id="path18" class="cls-2" d="M166.81,23.24,136.58,75.59,106.36,23.24H58.06l78.53,136,78.53-136Z"/>
+    </g>
+  </g>
+</svg>
